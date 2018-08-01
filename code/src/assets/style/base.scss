@@ -1,0 +1,26 @@
+body, div, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  color: #333;
+  font-size: .28rem;
+  overflow: hidden;
+  font-family: 'Microsoft Yahei';
+  background: #fff;
+  -webkit-text-size-adjust: none;
+}
+a {
+  text-decoration: none;
+  &:active {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+ul {
+  list-style: none;
+}
+
