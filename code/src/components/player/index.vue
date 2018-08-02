@@ -101,7 +101,9 @@ export default {
       return this.$store.state.song
     },
     singer () {
-      return this.song.singer && this.song.singer.map(item => item.title || item.name).join(' / ')
+      if (this.song.singer) {
+        return this.song.singer.map(item => item.title || item.name).join(' / ')
+      }
     },
     pic () {
       return this.song.album && 'https://y.gtimg.cn/music/photo_new/T002R300x300M000' + this.song.album.mid + '.jpg'

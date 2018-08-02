@@ -64,13 +64,13 @@ const actions = {
         state.player.tlyric = []
       }
     })
-    let arr = JSON.parse(localStorage.getItem('music')) || []
+    let arr = JSON.parse(localStorage.getItem('qmusic')) || []
     let index = arr.findIndex(item => item.mid === song.mid)
     if (index === -1) {
       arr.unshift(song)
     }
     state.player.music = arr
-    localStorage.setItem('music', JSON.stringify(arr))
+    localStorage.setItem('qmusic', JSON.stringify(arr))
   }
 }
 

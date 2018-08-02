@@ -92,12 +92,12 @@ export default {
       this.$router.push('/search')
     },
     clearHistory () {
-      localStorage.removeItem('search')
+      localStorage.removeItem('qsearch')
       this.search_history = []
     },
     clear (index) {
       this.search_history.splice(index, 1)
-      localStorage.setItem('search', JSON.stringify(this.search_history))
+      localStorage.setItem('qsearch', JSON.stringify(this.search_history))
     },
     scroll () {
       let elem = document.getElementById('app')
@@ -196,11 +196,11 @@ export default {
       }
       this.$refs['search'].blur()
       this.$router.push({ path: '/search', query: { type: 'song', s } })
-      let arr = JSON.parse(localStorage.getItem('search')) || []
+      let arr = JSON.parse(localStorage.getItem('qsearch')) || []
       let index = arr.findIndex(item => item === s)
       index > -1 && arr.splice(index, 1)
       arr.unshift(s)
-      localStorage.setItem('search', JSON.stringify(arr))
+      localStorage.setItem('qsearch', JSON.stringify(arr))
     },
     async loadData () {
       this.page = 1
@@ -212,7 +212,7 @@ export default {
       this.artist = []
       this.album = []
       this.mv = []
-      this.search_history = JSON.parse(localStorage.getItem('search')) || []
+      this.search_history = JSON.parse(localStorage.getItem('qsearch')) || []
       switch (this.$route.query.type) {
         case 'song':
           this.type = 0
@@ -247,7 +247,7 @@ export default {
       this.search_hot = data.data.hotkey.slice(0, 8)
     })
     this.loadData()
-    this.search_history = JSON.parse(localStorage.getItem('search')) || []
+    this.search_history = JSON.parse(localStorage.getItem('qsearch')) || []
   }
 }
 </script>

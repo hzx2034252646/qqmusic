@@ -35,7 +35,7 @@ export default {
       if (this.song.album) {
         return 'https://y.gtimg.cn/music/photo_new/T002R150x150M000' + this.song.album.mid + '.jpg'
       } else {
-        return require('../../assets/img/music.png')
+        return require('@/assets/img/music.png')
       }
     }
   },
@@ -53,7 +53,7 @@ export default {
     }
   },
   mounted () {
-    let arr = JSON.parse(localStorage.getItem('music')) || []
+    let arr = JSON.parse(localStorage.getItem('qmusic')) || []
     arr[0] && this.$store.dispatch('PLAY_MUSIC', arr[0])
   }
 }

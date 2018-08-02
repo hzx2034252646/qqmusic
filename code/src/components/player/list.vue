@@ -55,7 +55,7 @@ export default {
       if (this.player.music.length === 0) {
         this.deleteAll()
       } else {
-        localStorage.setItem('music', JSON.stringify(this.player.music))
+        localStorage.setItem('qmusic', JSON.stringify(this.player.music))
       }
     },
     deleteAll () {
@@ -64,7 +64,7 @@ export default {
       this.player.music = []
       this.$store.state.song = {}
       this.player.audio = ''
-      localStorage.setItem('music', JSON.stringify(this.player.music))
+      localStorage.setItem('qmusic', JSON.stringify(this.player.music))
     }
   }
 }
