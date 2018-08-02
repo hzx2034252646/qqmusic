@@ -66,7 +66,7 @@ export default {
       }).then(data => {
         let arr = data.comment.commentlist || []
         this.comment_hot = [...this.comment_hot, ...arr]
-        (this.comment_hot_count === 0) && (this.comment_hot_count = data.comment.commenttotal)
+        this.comment_hot_count === 0 && (this.comment_hot_count = data.comment.commenttotal)
         if (this.comment_hot.length < 10) {
           this.loadMore_hot = false
           this.loading_hot = false
@@ -92,7 +92,7 @@ export default {
       }).then(data => {
         let arr = data.comment.commentlist || []
         this.comment_new = [...this.comment_new, ...arr]
-        (this.comment_new_count === 0) && (this.comment_new_count = data.comment.commenttotal)
+        this.comment_new_count === 0 && (this.comment_new_count = data.comment.commenttotal)
         if (this.comment_new.length < 10) {
           this.loadMore_new = false
           this.loading_new = false
