@@ -1,12 +1,12 @@
 <template>
   <div id="artist-detail">
-    <header ref="header" v-if="artistName">
+    <header ref="header" v-show="artistName">
       <span class="back" @click="$router.back()"></span>
       <span class="title" ref="title">{{ artistName }}</span>
     </header>
     <div class="cover" :style="{'background-image': 'url(' + cover + ')'}"
-    v-if="artistName" ref="cover"></div>
-    <div class="container" ref="scrollView" v-if="artistName">
+    v-show="artistName" ref="cover"></div>
+    <div class="container" ref="scrollView" v-show="artistName">
       <div style="margin-top: 4.2rem"></div>
       <tab-bar :data="tab" @setActive="setActive" :class="{'fixed': tabFixed }"/>
       <song :data="music" />
@@ -169,6 +169,17 @@ export default {
         this.mv = [...this.mv, ...arr]
         arr.length > 0 && this.$refs['scrollView'].addEventListener('scroll', this.scroll)
       })
+    }
+  },
+  watch: {
+    '$route' () {
+      this.page = 1
+      this.type = 'music'
+      this.music = []
+      this.artistName = ''
+      this.artistDesc = ''
+      this.$refs['scrollView'].scrollTop = 0
+      this.loadMusic()
     }
   },
   async mounted () {
