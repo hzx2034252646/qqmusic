@@ -6,7 +6,7 @@ export default {
   GET_NEW_MV: 'https://c.y.qq.com/mv/fcgi-bin/getmv_by_tag?format=jsonp&cmd=shoubo&jsonpCallback=get_new_mv',
   GET_SEARCH_HOT: 'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg?format=jsonp&jsonpCallback=get_search_hot',
   GET_SEARCH: 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp?new_json=1&cr=1&n=20&format=jsonp&jsonpCallback=get_search',
-  GET_SONG_DETAIL: 'http://www.gy84.com/music/api.php?source=tencent',
+  GET_SONG_DETAIL: 'https://www.fczbl.vip/musicplayer/api.php?source=tencent',
   GET_MV_INFO: 'https://c.y.qq.com/mv/fcgi-bin/fcg_get_mvinfo.fcg?format=jsonp&cid=205361939',
   GET_TOPLIST_INFO: 'https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?format=jsonp&jsonpCallback=get_toplist_info',
   GET_MV_TOPLIST: 'https://c.y.qq.com/mv/fcgi-bin/fcg_musicshow_mvtoplist.fcg?format=jsonp&jsonpCallback=get_mv_toplist',
