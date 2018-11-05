@@ -62,13 +62,13 @@ export default {
       .content {
         .title {
           font-size: 1.15em;
-          margin: .15rem 0;
+          margin: .1rem 0;
         }
         p {
           width: 4rem;
           color: #999;
           font-size: .9em;
-          margin-bottom: .15rem;
+          margin-bottom: .1rem;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
